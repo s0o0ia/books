@@ -293,7 +293,7 @@ a {
 }
 a:hover,
 a:focus {
-  color: #E74C3C;
+  color: #1d140e;
   text-decoration: underline;
 }
 a:focus {
@@ -314,6 +314,15 @@ img {
 .carousel-inner > .item > a > img {
   display: block;
   max-width: 100%;
+  height: auto;
+}
+.item .img-responsive,
+.thumbnail > img,
+.thumbnail a > img,
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+  display: block;
+  max-width: 115px;
   height: auto;
 }
 .img-rounded {
@@ -1101,7 +1110,7 @@ pre code {
     width: 75%;
   }
   .col-md-8 {
-    width: 66.66666667%;
+    width: 60%;
   }
   .col-md-7 {
     width: 58.33333333%;
@@ -1113,13 +1122,16 @@ pre code {
     width: 41.66666667%;
   }
   .col-md-4 {
-    width: 33.33333333%;
+    width: 50%;
+  }
+  .col-md-41 {
+    width: 40%;
   }
   .col-md-3 {
-    width: 25%;
+    width: 30%;
   }
   .col-md-2 {
-    width: 16.66666667%;
+    width: 20%;
   }
   .col-md-1 {
     width: 8.33333333%;
