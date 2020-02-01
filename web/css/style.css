@@ -39,6 +39,7 @@ h1,h2,h3,h4,h5,h6,label,p{
 .logo img{
 	width: 65px;
     filter: invert(1);
+    padding-top: 15px;
 }
 .header-grid li{
 	display:inline-block;
@@ -91,7 +92,7 @@ h1,h2,h3,h4,h5,h6,label,p{
 .header-bottom {
 	background: #93745d;
     padding: 1.5em;
-    margin: 1px 0px 0px 1px;
+    margin: 2px 0px 0px 1px;
 }
 select.in-drop {
 	color:#7a7a7a;
@@ -549,6 +550,8 @@ padding: 0;
   float: left;
 }
 .rslides img {
+	filter: grayscale(50%);
+-webkit-filter: grayscale(50%);
   display: block;
   height: auto;
   float: left;
@@ -593,7 +596,7 @@ padding: 0;
 }
 .bottom-grid{
 	padding:2.5em;
-	background:#1a1a1a;
+    background: #1d140e;
 }
 .bottom-grid h4{
 	color:#cbcbcb;
@@ -647,12 +650,12 @@ a.view{
 	color:#fff;
 	font-size:1.3em;
 	padding: 0.7em 1.3em;
-	background: #d2232a;
+	background: #594537;
 	display: inline-block;
 	margin: 0.8em 0 0;
 }
 a.view:hover{
-	background: #0087d5;
+	background: #b1896e;
 }
 /*--product--*/
 .product-grids{
@@ -1370,6 +1373,7 @@ a.sign {
 }
 .logo img{
 	width: 50px;
+	padding-top: 17px;
 }
 .grid-product-in {
   float: left;
@@ -1837,3 +1841,7 @@ a.create {
   width: 61%;
 }
 }
+@font-face {
+font-family: "code_bold";
+src: url("../fonts/code/CODE Bold.otf");
+} 

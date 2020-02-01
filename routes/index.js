@@ -1,10 +1,42 @@
 const { Router } = require("express");
 const router = Router();
 const path = require("path");
+const { connection } = require("../config")
 
 // router.get("/", (req, res) => {
-//   res.sendFile(path.join(__dirname,"../web", "index.html"));
-// });
+//   // const sql = `SELECT * FROM users`;
+//   // connection
+//   //     .query(sql)
+//   //     .then(result => {
+//   //         console.log(result[0]);
+//   //     })
+//   //     .catch(err => {
+//   //         console.log(err);
+//   //     });
+
+//    const sql = `INSERT INTO users (username, lastname, email) VALUES ('Саша', 'Борщевська','bsasha945@.com')`;
+//       connection
+//           .query(sql)
+//           .then(result => {
+//               console.log(result[0]);
+//           })
+//           .catch(err => {
+//               console.log(err);
+//           });  
+//   });       
+
+router.post("/qwerty", (req, res) => {
+   const sql = `INSERT INTO users (username, lastname, email) VALUES ('${req.body.username}', '${req.body.lastname}','${req.body.email}')`;
+      connection
+          .query(sql)
+          .then(result => {
+              console.log(result);
+              res.redirect("/");
+          })
+          .catch(err => {
+              console.log(err);
+          });  
+  });  
 
 router.get("/", (req, res) => {
   res.render("index");

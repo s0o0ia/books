@@ -313,8 +313,9 @@ img {
 .carousel-inner > .item > img,
 .carousel-inner > .item > a > img {
   display: block;
-  max-width: 100%;
+  max-width: 185px;
   height: auto;
+  padding: 10px;
 }
 .item .img-responsive,
 .thumbnail > img,
