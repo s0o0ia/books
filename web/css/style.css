@@ -1850,3 +1850,19 @@ a.create {
 font-family: "code_bold";
 src: url("../fonts/code/CODE Bold.otf");
 } 
+.form_to_add h4, .form_to_add p, .form_to_add label{
+	margin: 5px 0px;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;	
+}
+.form_to_add input,.form_to_add textarea {
+	border: none;
+    border-bottom: 1px solid;
+    width: 100%;
+}
+.form_to_add textarea {
+	max-height: 200px;
+}

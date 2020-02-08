@@ -1,7 +1,7 @@
 const { Router } = require("express");
 const router = Router();
 const path = require("path");
-const { connection } = require("../config")
+const { connection } = require("../config");
 
 // router.get("/", (req, res) => {
 //   // const sql = `SELECT * FROM users`;
@@ -22,21 +22,34 @@ const { connection } = require("../config")
 //           })
 //           .catch(err => {
 //               console.log(err);
-//           });  
-//   });       
+//           });
+//   });
 
 router.post("/register_user", (req, res) => {
-   const sql = `INSERT INTO user_book (username, lastname, email, password) VALUES ('${req.body.username}', '${req.body.lastname}','${req.body.email}','${req.body.password}')`;
-      connection
-          .query(sql)
-          .then(result => {
-              console.log(result);
-              res.redirect("/");
-          })
-          .catch(err => {
-              console.log(err);
-          });  
-  });  
+  const sql = `INSERT INTO user_book (username, lastname, email, password) VALUES ('${req.body.username}', '${req.body.lastname}','${req.body.email}','${req.body.password}')`;
+  connection
+    .query(sql)
+    .then(result => {
+      console.log(result);
+      res.redirect("/");
+    })
+    .catch(err => {
+      console.log(err);
+    });
+});
+
+router.post("/add_product", (req, res) => {
+  const sql = `INSERT INTO products (name_book, description_book, price_book, caregory_book) VALUES ('${req.body.name_book}', '${req.body.description_book}','${req.body.price_book}','${req.body.caregory_book}')`;
+  connection
+    .query(sql)
+    .then(result => {
+      console.log(result);
+      res.redirect("/");
+    })
+    .catch(err => {
+      console.log(err);
+    });
+});
 
 router.get("/", (req, res) => {
   res.render("index");
@@ -55,6 +68,9 @@ router.get("/register", (req, res) => {
 });
 router.get("/single", (req, res) => {
   res.render("single");
+});
+router.get("/add_product", (req, res) => {
+  res.render("add_product");
 });
 
 module.exports = router;
