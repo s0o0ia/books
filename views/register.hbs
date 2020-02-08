@@ -1,25 +1,25 @@
 <div class="container">
 		<div class="register">
-		<h2>Реєстрація</h2>		
+		<h2>Register</h2>		
 		<div class=" register-top">
-			<form>
+			<form action="/register_user" method="POST">
 				<div> 	
-				<span>Ім'я</span>
-				<input type="text"> 
+				<span>Name</span>
+				<input type="text" name="username"> 
 			</div>
 			<div> 	
-				<span>Прізвище</span>
-				<input type="text"> 
+				<span>Last name</span>
+				<input type="text" name="lastname"> 
 			</div>
 			<div> 	
-				<span>Електронна пошта</span>
-				<input type="text"> 
+				<span>Email</span>
+				<input type="text" name="email"> 
 			</div>
 			<div> 
-				<span >Пароль</span>
-				<input type="password">
+				<span >Password</span>
+				<input type="password" name="password">
 			</div>				
-				<input type="submit" value="Вступити"> 
+				<input type="submit" value="Log in"> 
 			</form>
 		</div>		
 	</div>

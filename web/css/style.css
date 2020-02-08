@@ -21,6 +21,9 @@ body a{
 h1,h2,h3,h4,h5,h6,label,p{
 	margin:0;	
 }
+.header{
+	background: #1d140e;
+}
 .line{
 	background:#a29082;
 	width:100%;
@@ -389,6 +392,7 @@ select.in-drop {
 	display: block;
 	padding: 12em 0 0;
 	  background-size: cover;
+
 }
 .banner-matter h1{
 	background:rgba(0, 0, 0, 0.57);
@@ -878,6 +882,7 @@ a.create:hover{
 	display: -ms-flex;
 	display: -o-flex;
 	display: flex;
+	background: #1d140e;
 }
 .send-in input[type="submit"]{
 	width: 100%;

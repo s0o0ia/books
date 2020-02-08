@@ -25,8 +25,8 @@ const { connection } = require("../config")
 //           });  
 //   });       
 
-router.post("/qwerty", (req, res) => {
-   const sql = `INSERT INTO users (username, lastname, email) VALUES ('${req.body.username}', '${req.body.lastname}','${req.body.email}')`;
+router.post("/register_user", (req, res) => {
+   const sql = `INSERT INTO user_book (username, lastname, email, password) VALUES ('${req.body.username}', '${req.body.lastname}','${req.body.email}','${req.body.password}')`;
       connection
           .query(sql)
           .then(result => {
