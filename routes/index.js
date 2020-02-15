@@ -40,18 +40,7 @@ router.post("/register_user", (req, res) => {
     });
 });
 
-router.post("/add_product", (req, res) => {
-  const sql = `INSERT INTO products (name_book, description_book, price_book, caregory_book) VALUES ('${req.body.name_book}', '${req.body.description_book}','${req.body.price_book}','${req.body.caregory_book.value}')`;
-  connection
-    .query(sql)
-    .then(result => {
-      console.log(result);
-      res.redirect("/");
-    })
-    .catch(err => {
-      console.log(err);
-    });
-});
+
 
 router.get("/", (req, res) => {
   res.render("index");

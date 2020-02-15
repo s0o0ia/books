@@ -1109,6 +1109,7 @@ pre code {
   }
   .col-md-9 {
     width: 75%;
+    margin-bottom: 20px;
   }
   .col-md-8 {
     width: 60%;
