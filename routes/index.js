@@ -14,6 +14,8 @@ const { connection } = require("../config");
 //   //         console.log(err);
 //   //     });
 
+
+
 //    const sql = `INSERT INTO users (username, lastname, email) VALUES ('Саша', 'Борщевська','bsasha945@.com')`;
 //       connection
 //           .query(sql)
@@ -39,7 +41,7 @@ router.post("/register_user", (req, res) => {
 });
 
 router.post("/add_product", (req, res) => {
-  const sql = `INSERT INTO products (name_book, description_book, price_book, caregory_book) VALUES ('${req.body.name_book}', '${req.body.description_book}','${req.body.price_book}','${req.body.caregory_book}')`;
+  const sql = `INSERT INTO products (name_book, description_book, price_book, caregory_book) VALUES ('${req.body.name_book}', '${req.body.description_book}','${req.body.price_book}','${req.body.caregory_book.value}')`;
   connection
     .query(sql)
     .then(result => {
