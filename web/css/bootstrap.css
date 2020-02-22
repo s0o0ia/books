@@ -1679,6 +1679,11 @@ input[type="checkbox"] {
 }
 input[type="file"] {
   display: block;
+    width: 100%;
+    height: 100%;
+  opacity: 0;
+  position: absolute;
+  top: 0; 
 }
 input[type="range"] {
   display: block;
