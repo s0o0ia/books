@@ -18,23 +18,23 @@ const sql = `SELECT * FROM products`;
  
 connection.query(sql, function(err, results) {
     if(err) console.log(err);
-    // console.log(results);
-    var el='' ;
-    results.forEach(function(item){
-     return el += `<div class="col-md-4 grid-product-in">	
-                    <div class=" product-grid">	
-                      <a href="/single"><img class="img-responsive " src="images/pr.png" alt=""></a>		
-                      <div class="shoe-in">
-                        <h6><a href="/single">${results.name_book }</a></h6>
-                        <p>${results.description_book}</p>
-                        <label>$${results.price_book }</label>
-                        <a href="/single" class="store">FIND A STORE</a>
-                      </div>
-                      <b class="plus-on">+</b>
-                    </div>	
-                    </div>`
-    })
-    document.querySelector('.product-top').innerHTML = el;
+    console.log(results);
+    // var el='' ;
+    // results.forEach(function(item){
+    //  return el += `<div class="col-md-4 grid-product-in">	
+    //                 <div class=" product-grid">	
+    //                   <a href="/single"><img class="img-responsive " src="images/pr.png" alt=""></a>		
+    //                   <div class="shoe-in">
+    //                     <h6><a href="/single">${results.name_book }</a></h6>
+    //                     <p>${results.description_book}</p>
+    //                     <label>$${results.price_book }</label>
+    //                     <a href="/single" class="store">FIND A STORE</a>
+    //                   </div>
+    //                   <b class="plus-on">+</b>
+    //                 </div>	
+    //                 </div>`
+    // })
+    // document.querySelector('.product-top').innerHTML = el;
 });
 
 
