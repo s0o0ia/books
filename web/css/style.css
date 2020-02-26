@@ -876,12 +876,20 @@ a.create:hover{
 	resize:none;
 	height:150px;
 }
+.footer{
+	background: #594537;
+}
 .content-bottom{
 	display: -webkit-flex;
 	display: -moz-flex;
 	display: -ms-flex;
 	display: -o-flex;
 	display: flex;
+	-webkit-flex-flow: column;
+	-moz-flex-flow: column;
+	-ms-flex-flow: column;
+	-o-flex-flow: column;
+	flex-flow: column;
 	background: #1d140e;
 }
 .send-in input[type="submit"]{
@@ -1016,6 +1024,14 @@ a.cart:hover{
 .col-md-5 label img{
 	width: 100%;	
 }
+.owl-prev{
+	margin: 20px auto;
+}
+.owl-buttons{
+	height: 100%;
+    width: 4%;
+
+}
 .col-md-5 label{
 	color: #fff;
     position: absolute;
@@ -1132,7 +1148,10 @@ span.price-in small{
 	display: block;
 }
 .run-grid li a:hover,.run-grid-in li a:hover{
-	color: #d2232a;
+	color: #0c0906;
+}
+footer{
+	background-color: #594537;
 }
 .left-footer h4{
 	background:#1d140e;
