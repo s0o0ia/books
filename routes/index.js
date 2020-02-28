@@ -105,5 +105,8 @@ router.get("/single", (req, res) => {
 router.get("/add_product", (req, res) => {
   res.render("add_product");
 });
+router.get("/articles", (req, res) => {
+  res.render("articles");
+});
 
 module.exports = router;

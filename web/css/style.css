@@ -879,6 +879,14 @@ a.create:hover{
 .footer{
 	background: #594537;
 }
+.articles_list .article_books{
+	margin: 30px 50px;
+    border-bottom: 1px solid #543e36;
+}
+.articles_list .article_books p{
+	margin: 14px 0px;
+
+}
 .content-bottom{
 	display: -webkit-flex;
 	display: -moz-flex;
