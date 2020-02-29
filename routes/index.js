@@ -84,6 +84,16 @@ router.post("/register_user", (req, res) => {
     });
 });
 
+function filter(el){
+  const option = el.innerText;
+  const category = `SELECT caregory_book FROM products`
+  if(option =! category){
+    document.body.style.display = none;
+  }
+}
+
+
+
 router.get("/", (req, res) => {
   res.render("index");
 });

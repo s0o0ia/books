@@ -4,7 +4,7 @@ const app = express();
 const PORT = process.env.PORT || 1300;
 const home = require("./routes");
 const exphbs = require("express-handlebars");
-// const adminPages = require("./router/admin");
+// const adminPages = require("./router/admin")
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 const hbs = exphbs.create({
