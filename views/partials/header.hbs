@@ -49,6 +49,13 @@
 							<li class="choise"><a href="/contact">contact</a></li>
 							<li class="choise"><a href="/account">account</a></li class="choise">
 							<li class="choise"><a href="/register">register</a></li class="choise">
+							{{#if isAuth}}
+
+							<li class="choise"><a href="/register">register</a></li class="choise">
+							{{else}}
+
+							<li class="choise"><a href="/register">register</a></li class="choise">
+							{{/if}}
 						</ul>
 					</li>
 				</ul>

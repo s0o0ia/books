@@ -1,18 +1,22 @@
 <div class="product-grids">
 	<div class="container">
 	<div class="product-top">
-		<div class="col-md-4 grid-product-in fiction">	
-		<div class=" product-grid">	
-			<a href="single.html"><img class="img-responsive " src="images/pr.png" alt=""></a>		
-			<div class="shoe-in">
-				<h6><a href="single.html">Lorem Ipsum is simply dummy </a></h6>
-				<label>$67.99</label>
-				<a href="single.html" class="store">FIND A STORE</a>
-			</div>
-			
-			<b class="plus-on">+</b>
-		</div>	
-		</div>
+	{{#if offers}}
+      {{#each offers}}
+      <div class="col-lg-4 d-flex ftco-animate">
+        <div class="services-wrap d-flex">
+          <a href="/offer-{{this.id}}" class="img" style="background-image: url('{{this.image}}');"></a>
+          <div class="text p-4">
+            <h3>{{this.title}}</h3>
+            <p style="    overflow: hidden;display: block;max-height: 85px;width: 100%;">
+              {{this.description}}</p>
+            <p class="price"><span>${{this.price}}</span> <a href="#"
+                class="ml-2 btn btn-white btn-outline-white">Order</a></p>
+          </div>
+        </div>
+      </div>
+      {{/each}}
+      {{/if}}
 	<div class="clearfix"> </div>
 	</div>
 	</div>

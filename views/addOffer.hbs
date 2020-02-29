@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="single">
+    <div class="col-md-9 top-in-single">
+    <form action="/add_product" method="POST"  enctype="multipart/form-data">
+      <div class="col-md-5 single-top">
+        <label><img src="images/download-digital.gif" alt=""></label><br>
+        <input type="file" name="filedata" /><br><br>
+      </div>
+      <div class="col-md-7 single-top-in">
+          <div class="single-para form_to_add">
+            <h4><span>Name:</span><input type="text" name="name_book"></h4>
+            <p><span>Description:</span><textarea name="description_book" id="" cols="30" rows="10"></textarea></p>
+            <label class="add-to"><span>$ </span><input type="text" name="price_book"> </label>
+            <div class="available">
+              <ul>
+                <li>Category:
+                  <select name="caregory_book">
+                    <option>fiction</option>
+                    <option>specialized literature</option>
+                    <option value="">children's literature</option>
+                    <option value="">handbooks</option>
+                  </select></li>
+              </ul>
+            </div>
+          </div>
+          <button>save</button>
+      </div>
+      </form>
+      <div class="clearfix"> </div>
+
+    </div>
+
+  </div>
+</div>
