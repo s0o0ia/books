@@ -2,15 +2,20 @@ const { Router } = require("express");
 const router = Router();
 const users = [
   {
-    email: "sum_vika@gmail.com",
-    password: "qwerty"
+    login: "nazar",
+    pass: "1111"
   },
+  {
+    login: "hose",
+    pass: "1111"
+  }
+];
+router.get("/login", (req, res) => {
+  console.log("_____", req.session);
+  res.render("login");
+});
 
-]
-
-
-
-router.post("/account", (req, res) => {
+router.post("/login", (req, res) => {
   let client = users.filter(item => {
     if (item.login == req.body.login) {
       return item;
@@ -26,25 +31,37 @@ router.post("/account", (req, res) => {
         username: client[0].login
       };
       console.log("----------------------", req.session);
-      res.redirect("/add_product");
+      res.redirect("/admin");
     } else {
       console.log("не авторизовано");
       req.session.isAuth = false;
-      res.redirect('/account')
+      res.redirect("/login");
     }
   } //
   //if not exist
   else {
     console.log("чувака НЕ існує");
-    res.redirect("/account");
+    res.redirect("/login");
   }
 
   // console.log(users)
 });
 
-router.get("/add_product", (req,res)=>{
-  res.session.isAuth = false;
-  res.render("account");
+router.get("/admin", (req, res) => {
+  if (req.session.isAuth == true) {
+    console.log("--------admin page------------", req.session);
+    res.render("admin", {
+      isAuth: req.session.isAuth,
+      username: req.session.user.username
+    });
+  } else {
+    res.redirect("/login");
+  }
+});
+
+router.get("/logout", (req, res) => {
+  req.session.isAuth = false;
+  res.redirect("/login");
 });
 
 module.exports = router;

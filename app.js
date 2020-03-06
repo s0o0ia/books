@@ -1,37 +1,51 @@
-const express = require('express');
-const bodyParser = require('body-parser');
+const express = require("express");
+const bodyParser = require("body-parser");
+const expressHbs = require("express-handlebars");
 const app = express();
-const PORT = process.env.PORT || 1300;
-const home = require("./routes");
-const exphbs = require("express-handlebars");
-const session = require("express-session");
-const variable = require("./middlware");
-app.use(variable);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-const hbs = exphbs.create({
-    defaultLayout: "main",
-    extname: "hbs"
-});
-app.use(
-    session({
-      secret: "sombrero",
-      resave: false,
-      saveUninitialized: false
-    })
-  );
-app.engine("hbs", hbs.engine);
+const PORT = process.env.PORT || 1300;
+const hbs = require("hbs");
+const session = require("express-session");
+
+// const variable = require('./middlware');
+// app.use(variable);
+
+
+app.use(express.static(__dirname + "/public"));
+
 app.set("view engine", "hbs");
-app.set("views", "views");
-app.use(express.static(__dirname + "/web"));
+hbs.registerPartials(__dirname + "/views/partials");
 
+app.engine(
+  "hbs",
+  expressHbs({
+    layoutsDir: "/views/layouts",
+    defaultLayout: "layout",
+    extname: "hbs"
+  })
+);
+app.use(
+  session({
+    secret: "sombrero",
+    resave: false,
+    saveUninitialized: false
+  })
+);
 
-
-
-const adminPages = require("./router/admin")
+const adminPages = require("./router/admin");
+const auth = require("./router/auth");
+const addOffer = require("./router/add-offer");
+const main = require("./router/main");
 app.use(adminPages);
-app.use(home);
+app.use(main);
+app.use(auth);
+app.use(addOffer);
 
+
+app.get("/contact", (req, res) => {
+  res.render("contact");
+});
 
 app.listen(PORT,() => {
     console.log("(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧ server working*:･ﾟ✧")

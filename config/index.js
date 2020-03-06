@@ -1,6 +1,7 @@
 const mysql = require("mysql2");
 const nodemailer = require("nodemailer");
 
+// MySQL
 module.exports.connection = mysql
   .createConnection({
     host: "db4free.net",
@@ -15,8 +16,8 @@ module.exports.transporter = nodemailer.createTransport({
   port: 465,
   secure: true,
   auth: {
-    user: "sofishandala13@gmail.com",
-    pass: "3Zi4Po15"
+    user: "s0shandala@gmail.com",
+    pass: "3ej4vn15"
   },
   tls: {
     rejectUnauthorized: false

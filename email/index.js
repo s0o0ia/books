@@ -1,13 +1,13 @@
 const { transporter } = require("../config");
 
-class eemail {
+class Email {
   static confirm(el) {
     const mailOptions = {
-      from: "sofishandala13@gmail.com",
-      to: `${el.email}`,
-      subject: "test send",
-      html: `${el.message}`,
-      bcc: `${el.email}`
+      from: "qwerty@gmail.com",
+      to: el.email,
+      subject: "Test send email",
+      html: `Тестовий email ві:  ${el.message}`,
+      bcc: el.email
     };
 
     transporter.sendMail(mailOptions, function(error, info) {
@@ -20,11 +20,11 @@ class eemail {
   }
   static reset(el) {
     const mailOptions = {
-      from: "sofishandala13@gmail.com",
-      to: `${el.email}`,
-      subject: "reset password",
-      html: " reset password",
-      bcc: `${el.email}`
+      from: "qwerty@gmail.com",
+      to: el.email,
+      subject: "Reset password",
+      html: `Reset password `,
+      bcc: el.email
     };
 
     transporter.sendMail(mailOptions, function(error, info) {
@@ -37,11 +37,11 @@ class eemail {
   }
   static news(el) {
     const mailOptions = {
-      from: "sofishandala13@gmail.com",
-      to: `${el.email}`,
-      subject: ` news for ${el.name}`,
-      html: `${el.news}`,
-      bcc: `${el.email}`
+      from: "qwerty@gmail.com",
+      to: el.email,
+      subject: `Новина для: ${el.name}`,
+      html: `${el.news} <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Shaqi_jrvej.jpg/1200px-Shaqi_jrvej.jpg">`,
+      bcc: el.email
     };
 
     transporter.sendMail(mailOptions, function(error, info) {
@@ -54,4 +54,4 @@ class eemail {
   }
 }
 
-module.exports.eemail = eemail;
+module.exports.Email = Email;
