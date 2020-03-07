@@ -63,4 +63,6 @@ class Offer {
   }
 }
 
+
+
 module.exports.Offer = Offer;

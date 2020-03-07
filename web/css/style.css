@@ -168,7 +168,7 @@ select.in-drop {
 	cursor: pointer;
 }
 .sb-search-submit {
-	background: url('../images/img-sprite.png') no-repeat -20px -87px;
+	background: url('../images/mg-sprite.png') no-repeat -20px -87px;
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; /* IE 8 */
     filter: alpha(opacity=0); /* IE 5-7 */
     color: transparent;

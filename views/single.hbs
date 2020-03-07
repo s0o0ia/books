@@ -1,29 +1,20 @@
 <div class="container">
   <div class="single">
+    {{#if offers}}
+			{{#each offers}}
     <div class="col-md-9 top-in-single">
       <div class="col-md-5 single-top">
         <ul id="etalage">
-          <img src="" alt="">
+          <img src="/web{{$this.image}}" alt="">
         </ul>
 
       </div>
       <div class="col-md-7 single-top-in">
         <div class="single-para">
-          <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit</h4>
-          <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical
-            Latin literature from 45 BC, making it over 2000 years old.</p>
+          <h4>{{$this.name}}</h4>
+          <p>{{$yhis.content}}</p>
 
-          <label class="add-to">$32.8</label>
-
-          <div class="available">
-            <ul>
-              <li>Cost:
-                <select>
-                  <option>U.S.Dollar</option>
-                  <option>Euro</option>
-                </select></li>
-            </ul>
-          </div>
+          <label class="add-to">${{$this.price}}</label>
 
 
 
@@ -32,7 +23,9 @@
       <div class="clearfix"> </div>
 
     </div>
-    <div class="col-md-3">
+      {{/each}}
+		{{/if}}
+    {{!-- <div class="col-md-3">
       <div class="single-bottom">
         <h4>Brands</h4>
         <ul>
@@ -82,7 +75,7 @@
             <label for="color4"><span></span>Green</label>
           </li>
         </ul>
-      </div>
+      </div> --}}
       {{!-- <div class="single-bottom">
         <h4>Product Categories</h4>
         <div class="product-go">
@@ -112,7 +105,7 @@
       </div> --}}
     </div>
     <div class="clearfix"> </div>
-    <div class="product-top">
+    {{!-- <div class="product-top">
       <div class="col-md-4 grid-product-in">
         <div class=" product-grid">
           <a href="single.html"><img class="img-responsive " src="images/sh2.png" alt=""></a>
@@ -151,7 +144,7 @@
       </div>
       <div class="clearfix"> </div>
 
-    </div>
+    </div> --}}
   </div>
 </div>
 <script>
