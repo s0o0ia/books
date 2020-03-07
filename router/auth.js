@@ -2,20 +2,24 @@ const { Router } = require("express");
 const router = Router();
 const users = [
   {
-    login: "nazar",
+    login: "s0o0ia",
     pass: "1111"
   },
   {
-    login: "hose",
-    pass: "1111"
+    login: "oritek",
+    pass: "6666"
   }
 ];
-router.get("/login", (req, res) => {
+
+
+
+
+router.get("/account", (req, res) => {
   console.log("_____", req.session);
-  res.render("login");
+  res.render("account");
 });
 
-router.post("/login", (req, res) => {
+router.post("/account", (req, res) => {
   let client = users.filter(item => {
     if (item.login == req.body.login) {
       return item;
@@ -35,13 +39,13 @@ router.post("/login", (req, res) => {
     } else {
       console.log("не авторизовано");
       req.session.isAuth = false;
-      res.redirect("/login");
+      res.redirect("/account");
     }
   } //
   //if not exist
   else {
     console.log("чувака НЕ існує");
-    res.redirect("/login");
+    res.redirect("/account");
   }
 
   // console.log(users)
@@ -55,13 +59,13 @@ router.get("/admin", (req, res) => {
       username: req.session.user.username
     });
   } else {
-    res.redirect("/login");
+    res.redirect("/account");
   }
 });
 
 router.get("/logout", (req, res) => {
   req.session.isAuth = false;
-  res.redirect("/login");
+  res.redirect("/account");
 });
 
 module.exports = router;

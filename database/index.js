@@ -9,7 +9,7 @@ connection.connect(function(err) {
 
 class Offer {
   static async add(el) {
-    const sql = `INSERT INTO products(name_book, description_book, price_book, caregory_book, img_book) VALUES("${el.name_book}","${el.description_book}","${el.price_book}","${el.caregory_book}","${el.img_book}")`;
+    const sql = `INSERT INTO products(name, content, price, caregory, image, description) VALUES("${el.name}","${el.content}","${el.price}","${el.caregory}","${el.image}","${el.description}")`;
     return await connection
       .query(sql)
       .then(result => {
@@ -22,7 +22,7 @@ class Offer {
       });
   }
   static async get(el) {
-    const sql = `SELECT * FROM products`;
+    const sql =` SELECT * FROM products`;
     return await connection
       .query(sql)
       .then(result => {
@@ -48,7 +48,7 @@ class Offer {
       });
   }
   static async update(el) {
-    const sql = `UPDATE products SET title="${el.name_book}", price="${el.price_book}", description="${el.description_book}" WHERE id="${el.offer_id}"`;
+    const sql = `UPDATE products SET title="${el.name}", price="${el.price}", description="${el.content}" WHERE id="${el.offer_id}"`;
 
     return await connection
       .query(sql)

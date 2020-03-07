@@ -17,7 +17,7 @@ module.exports.transporter = nodemailer.createTransport({
   secure: true,
   auth: {
     user: "s0shandala@gmail.com",
-    pass: "3ej4vn15"
+    password: "3ej4vn15"
   },
   tls: {
     rejectUnauthorized: false

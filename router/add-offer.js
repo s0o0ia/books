@@ -21,7 +21,7 @@ router.post("/add-offer", (req, res) => {
   let sampleFile = req.files.image;
   let imgName = req.files.image.name.trim();
   let newName = `${Date.now()}-${imgName}`;
-  let path = `public/offers/${newName}`;
+  let path = `web/offers/${newName}`;
   let forDBpath = `/offers/${newName}`;
 
   sampleFile.mv(path, function(err) {

@@ -3,10 +3,10 @@ const { transporter } = require("../config");
 class Email {
   static confirm(el) {
     const mailOptions = {
-      from: "qwerty@gmail.com",
+      from: "s0shandala@gmail.com",
       to: el.email,
-      subject: "Test send email",
-      html: `Тестовий email ві:  ${el.message}`,
+      subject: el.message,
+      html: `Тестовий email ві:  ${el.name}`,
       bcc: el.email
     };
 
@@ -20,11 +20,11 @@ class Email {
   }
   static reset(el) {
     const mailOptions = {
-      from: "qwerty@gmail.com",
-      to: el.email,
-      subject: "Reset password",
-      html: `Reset password `,
-      bcc: el.email
+      from: el.email,
+      to: "s0shandala@gmail.com",
+      subject: "bla",
+      html: el.message,
+      bcc: "s0shandala@gmail.com"
     };
 
     transporter.sendMail(mailOptions, function(error, info) {
@@ -37,10 +37,10 @@ class Email {
   }
   static news(el) {
     const mailOptions = {
-      from: "qwerty@gmail.com",
+      from: "s0shandala@gmail.com",
       to: el.email,
       subject: `Новина для: ${el.name}`,
-      html: `${el.news} <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Shaqi_jrvej.jpg/1200px-Shaqi_jrvej.jpg">`,
+      html: `${el.news}`,
       bcc: el.email
     };
 

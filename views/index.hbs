@@ -22,8 +22,8 @@
 <div class="content">
 	<div class="sport-your">
 <!-- requried-jsfiles-for owl -->
-							<link href="css/owl.carousel.css" rel="stylesheet">
-							    <script src="js/owl.carousel.js"></script>
+							<link href="/css/owl.carousel.css" rel="stylesheet">
+							    <script src="/js/owl.carousel.js"></script>
 							        <script>
 									    $(document).ready(function() {
 									      $("#owl-demo").owlCarousel({
@@ -141,45 +141,36 @@
 	</div>
 		<!--//sreen-gallery-cursual---->
 	<div class="content-grids">
-	
-	<div class="col-md-4 content-grid">
-		<a href="single.html" class="lot"><img class="img-responsive " src="images/warandpeace.jpg" alt=""></a>
-		<div class="shoe">
-			<p>War and pease </p>
-			<label>$10.99</label>
-			<a href="single.html">find a store</a>
-		</div>
-		<div class="clearfix"> </div>
-		<b class="plus-in">+</b>
+
+
+	<div>
+		{{#if offers}}
+			{{#each offers}}
+				<div class="col-md-4 content-grid">
+						{{#if isAuth0}}
+						<a href="/edit-offer/{{this.id}}">Edit</a>
+						{{/if}}
+					<img class="img-responsive " src="/web{{this.description}}" alt=""> 
+					<div class="shoe">
+						<p>{{this.name}}</p>
+						<label>${{this.price}}</label>
+						<a href="/single">find a store</a>
+					</div>
+					
+					<div class="clearfix"> </div>
+					<b class="plus-in">+</b>
+				</div>
+			{{/each}}
+		{{/if}}
 	</div>
-	<div class="col-md-4 content-grid">
-		<a href="single.html" class="lot"><img class="img-responsive " src="images/s-l640.jpg" alt=""></a>
-		<div class="shoe">
-			<p>Hippie</p>
-			<label>$6.99</label>
-			<a href="single.html">find a store</a>
-		</div>		
-		<div class="clearfix"> </div>
-		<b class="plus-in">+</b>
-	</div>
-	<div class="col-md-4 content-grid">
-		<a href="single.html" class="lot"><img class="img-responsive " src="images/17030.jpg" alt=""></a>
-		<div class="shoe">
-			<p>The sun also rises</p>
-			<label>$7.99</label>
-			<a href="single.html">find a store</a>
-		</div>
-		
-		<div class="clearfix"> </div>
-		<b class="plus-in">+</b>
-	</div>
+
 	
 	<div class="clearfix"> </div>
 	</div>
 
 	<div class="content-bottom">
 		<div class="col-md-8 bottom-content">
-			<script src="js/responsiveslides.min.js"></script>
+			<script src="/js/responsiveslides.min.js"></script>
 					<script>
 						$(function () {
 						  $("#slider").responsiveSlides({
